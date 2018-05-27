@@ -1,0 +1,49 @@
+apply from: '../deps.gradle'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion buildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion buildConfig.minSdkVersion
+        targetSdkVersion buildConfig.targetSdkVersion
+        versionCode buildConfig.versionCode
+        versionName buildConfig.versionName
+        testInstrumentationRunner buildConfig.testInstrumentationRunner
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':domain')
+    implementation deps.kotlin.stdlib.jdk
+    implementation deps.android.support.appCompat
+    implementation deps.javax.inject
+    implementation deps.rx.java
+    implementation deps.rx.android
+    implementation deps.android.arch.room.runtime
+    implementation deps.android.arch.room.rxjava
+    kapt deps.android.arch.room.compiler
+    implementation deps.retrofit.client
+    implementation deps.retrofit.gsonConverter
+    implementation deps.retrofit.adapterRxJava2
+    implementation deps.okhttp.client
+    implementation deps.okhttp.logging
+    testImplementation deps.okhttp.mockWebServer
+    testImplementation deps.junit
+    androidTestImplementation deps.android.test.runner
+}

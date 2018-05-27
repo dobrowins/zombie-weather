@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Zombie Weather</string>
+
+    <string name="all_rationale_location">Приложение не сможет работать без доступа к данным о локации. Разрешить?</string>
+    <string name="all_error_connectionfailed">Невозможно установить соединение</string>
+    <string name="all_error_nolocationfound">Нет данных по локации. Закрываю приложение.</string>
+    <string name="all_error_onConnectionSuspended">Соединение прервано</string>
+    <string name="all_error_no_permission_granted">Необходимые разрешения не предоставлены. Приложение не может продолжать работу.</string>
+    <string name="all_error_no_network_accessible">Нет доступа в Интернет, проверьте подключение к сети</string>
+
+    <!--WEATHER STRINGS-->
+    <string name="apiKey">c072d9e1b21edc9515e9875f641fc9a1</string>
+    <string name="nothingToDisplay">Данные не загружены</string>
+    <string name="currentTemp">%1$s°</string>
+    <string name="currentHumidity">Влажность %1$s</string>
+
+</resources>

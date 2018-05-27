@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">repository</string>
+
+    <string name="all_default_weather_desc">Weather is nightmarish</string>
+
+    <!--I AM NO COPYRIGHTER-->
+    <array name="thunderstorm">
+        <item>Thunderstorm. You\'d get by if enough food is stored.</item>
+    </array>
+
+    <array name="dizzle">
+        <!--моросит-->
+        <item>Dizzle. You\'d want to drink. Please stay aware.</item>
+        <item>Dizzle.</item>
+    </array>
+
+    <array name="rain">
+        <item>Rain, rain, go away - come with dead another day.</item>
+        <item>Almost flood out there. You better sit home, drink wine with that girl you saved the other day.</item>
+        <item>That\'s how rain should look like. Rain in icy hell of zombie-apocalypse.</item>
+    </array>
+
+    <array name="snow">
+        <item>Snowing. I\'d recommend to stay home - headhunters could find you by tracks you\'d left.</item>
+        <item>Too much snow. Better stay home, read Walking Dead.</item>
+        <item>Rain and snow - how can it become worse? Add zombies.</item>
+    </array>
+
+    <array name="atmosphere">
+        <item>Foggy. Who knows what hides around the corner.</item>
+        <item>Dusty. Careful with the coughing.</item>
+    </array>
+
+    <array name="clear">
+        <item>Sky is clear - nice opportunity to look for better shelter.</item>
+    </array>
+
+    <array name="clouds">
+        <item>Cloudy. Pilots won\'t see your smoke signal.</item>
+    </array>
+
+    <array name="extreme">
+        <item>Very hot. Better look for shelter closer to the beach.</item>
+        <item>Kinda windy. Don\'t get sick. It\'s been months since any medication were left in the pharmacies.</item>
+        <item>Very windy. Dead won\'t be able to smell you.</item>
+    </array>
+
+    <array name="additional">
+        <item>It\'s calm. Get some rest and watch an good zombie-movie.</item>
+        <item>Light breeze.</item>
+        <item>Stormy. Some yacht with food and ammo might crush to the beach. Go take a look.</item>
+    </array>
+
+    <!--http://openweathermap.org/weather-conditions-->
+
+</resources>

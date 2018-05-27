@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Zombie Weather 2.0</string>
+
+    <string name="all_rationale_location">App can\'t work without access to location. Give permission?</string>
+    <string name="all_error_connectionfailed">Connections is failed</string>
+    <string name="all_error_nolocationfound">No location data found. Please try again later.</string>
+    <string name="all_error_onConnectionSuspended">Connection is suspended</string>
+    <string name="all_error_no_permission_granted">Required permission are not granted. Terminating application.</string>
+    <string name="all_error_no_network_accessible">Can\'t access Internet, check your network connection</string>
+
+    <!--WEATHER STRINGS-->
+    <string name="apiKey">c072d9e1b21edc9515e9875f641fc9a1</string>
+    <string name="nothingToDisplay">Data not loaded</string>
+    <string name="currentTemp">%1$s°</string>
+    <string name="currentHumidity">Humidity is %1$s</string>
+    <string name="menuTitleMetric" translatable="false">C°</string>
+    <string name="menuTitleImperial" translatable="false">F°</string>
+
+</resources>

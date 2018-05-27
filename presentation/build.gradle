@@ -1,0 +1,88 @@
+apply from: '../deps.gradle'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'io.fabric'
+
+allOpen {
+    annotation("com.dobrowins.allsouls.allsoulsWeather20.OpenForTesting")
+}
+
+android {
+
+    compileSdkVersion buildConfig.compileSdkVersion
+    defaultConfig {
+        applicationId "${buildConfig.applicationId}.presentation"
+        minSdkVersion buildConfig.minSdkVersion
+        targetSdkVersion buildConfig.targetSdkVersion
+        versionCode buildConfig.versionCode
+        versionName buildConfig.versionName
+        testInstrumentationRunner buildConfig.testInstrumentationRunner
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+        sourceSets {
+            androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+            androidTest.resources.srcDirs += ["$projectDir/src/main"]
+        }
+    }
+
+    buildTypes {
+        all {
+            buildConfigField 'String', 'BASE_URL', BASE_URL
+        }
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "${applicationId}_${versionCode}.apk"
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':repository')
+    implementation project(':domain')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib.jdk
+    implementation deps.android.support.appCompat
+    implementation deps.android.support.constraintLayout
+    implementation deps.android.play.location
+    implementation deps.dagger.runtime
+    kapt deps.dagger.compiler
+    implementation deps.rx.java
+    implementation deps.rx.android
+    implementation deps.rx.permissions
+    implementation deps.android.arch.room.runtime
+    implementation deps.android.arch.room.rxjava
+    kapt deps.android.arch.room.compiler
+    implementation deps.moxy.moxy
+    implementation deps.moxy.moxyAndroid
+    implementation deps.moxy.appcompat
+    kapt deps.moxy.compiler
+    implementation deps.retrofit.client
+    implementation deps.retrofit.gsonConverter
+    implementation deps.retrofit.adapterRxJava2
+    implementation deps.okhttp.client
+    implementation deps.okhttp.logging
+    testImplementation deps.okhttp.mockWebServer
+//    implementation (deps.crashlytics) {
+//        transitive = true
+//    }
+    implementation deps.timber
+    testImplementation deps.junit
+    androidTestImplementation deps.android.test.runner
+}
