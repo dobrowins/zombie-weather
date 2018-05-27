@@ -41,7 +41,6 @@ dependencies {
     implementation deps.retrofit.client
     implementation deps.retrofit.gsonConverter
     implementation deps.retrofit.adapterRxJava2
-    implementation deps.okhttp.client
     implementation deps.okhttp.logging
     testImplementation deps.okhttp.mockWebServer
     testImplementation deps.junit
